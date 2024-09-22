@@ -13,7 +13,7 @@ public class HelloWorldApiApplication {
 
 	@GetMapping("getData")
 	public String getHello(){
-		return "welcome to itc";
+		return "welcome to itc ltd";
 	}
 
 	public static void main(String[] args) {
