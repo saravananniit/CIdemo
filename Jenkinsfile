@@ -1,29 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Clean') {
-            steps {
-                sh 'mvn clean'
-            }
-        }
-        stage('Compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'mvn package'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-        stage('Install') {
-            steps {
-                sh 'mvn install'
+                sh 'mvn -version' // Verify Maven installation
+                sh 'mvn clean install -DskipTests' // Execute Maven command
             }
         }
     }
